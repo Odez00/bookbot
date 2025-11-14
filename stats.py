@@ -11,3 +11,14 @@ def number_of_characters(text: str):
         else:
             characters[character.lower()] = 1
     return characters
+
+
+def sorted_dict(words: dict):
+    def sort_on(items):
+        return items["num"]
+
+    sorted = []
+    for char in words:
+        sorted.append({"char": char, "num": words[char]})
+    sorted.sort(reverse=True, key=sort_on)
+    return sorted
